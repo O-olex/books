@@ -1,11 +1,11 @@
 import React from "react";
 
-const Page2 = () => {
+const Library = () => {
     return (
         <div>
-            Page 2
+            Library
         </div>
     )
 }
 
-export default Page2;
+export default Library;

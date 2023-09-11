@@ -1,18 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import MainPage from './Components/MainPage';
-import Page1 from './Components/Page1';
-import Page2 from './Components/Page2';
-import Navbar from './Components/Navbar';
+import c from './App.module.css';
+import MainPage from './Components/MainPage/MainPage';
+import Library from './Components/Library';
+import Favourites from './Components/Favourites';
+import Recommended from './Components/Recommended';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
-    <div><Navbar/>
-    <div>
+    <div className={c.App}><Navbar/>
+    <div className={c.app_child}>
       <Routes>
-          <Route path={'/MainPage'} element={<MainPage/>}></Route>
-          <Route path={'/Page1'} element={<Page1/>}></Route>
-          <Route path={'/Page2'} element={<Page2/>}></Route>
+          <Route path={'/MainPage'} element={<Recommended/>}></Route>
+          <Route path={'/Recommended'} element={<Recommended/>}></Route>
+          <Route path={'/Library'} element={<Library/>}></Route>
+          <Route path={'/Favourites'} element={<Favourites/>}></Route>
         </Routes>
     </div>
     </div>

@@ -1,0 +1,10 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.app_child{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}

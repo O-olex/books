@@ -1,11 +1,23 @@
 import React from "react";
+import state from "../state/state";
+import { observer } from "mobx-react-lite"
 
-const Library = () => {
+const Library = observer( () => {
+
     return (
-        <div>
-            Library
-        </div>
+        <table>
+            <tbody>
+                {state.books.map( book => 
+                <tr key={book.id}>
+                    <td>{book.title}</td>
+                    <td>{book.year}</td>
+                    <td>{book.rating}</td>
+                    <td>{book.pages}</td>
+                    <button onClick={() => {state.addToFavourites(book.id)}}>To favourites</button>
+                </tr>)}
+            </tbody>
+        </table>
     )
-}
+})
 
 export default Library;

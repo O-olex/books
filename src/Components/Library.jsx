@@ -13,7 +13,7 @@ const Library = observer( () => {
                     <td>{book.year}</td>
                     <td>{book.rating}</td>
                     <td>{book.pages}</td>
-                    <button onClick={() => {state.addToFavourites(book.id)}}>To favourites</button>
+                    <td><button onClick={() => {state.addToFavourites(book.id)}}>To favourites</button></td>
                 </tr>)}
             </tbody>
         </table>

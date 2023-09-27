@@ -18,7 +18,7 @@ class state {
 
     addToFavourites(id) {
         this.favourites.push(id);
-        console.log(this.favourites)
+        
     }
 }
 

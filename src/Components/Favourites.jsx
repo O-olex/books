@@ -3,18 +3,28 @@ import state from "../state/state";
 import { observer } from "mobx-react-lite";
 
 const Favourites = observer(() => {
-    let filterBooks = [];
-    for (let i = 0; i <= state.books.length; i++) {
-        for(let j = 0; j <= state.favourites.length; j++)
-            if (state.books[i].id === state.favourites[j]){
-                filterBooks.push(state.books[i])
-            }
-    }
 
+    let favBooks = [];
+
+    state.books.forEach( book => {
+
+        state.favourites.forEach( fav => {
+
+            if (fav == book.id) {
+                favBooks.push(book)
+            }
+
+        })
+    })
+
+    console.log(favBooks)
     return (
-        
-        <div>{filterBooks}</div>
+        <div>
+            {favBooks.map( book => <div key={book.id}>{book.id}:{book.title}:</div> )}
+        </div>
     )
 })
+
+
 
 export default Favourites;

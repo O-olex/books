@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import c from './App.module.css';
 import MainPage from './Components/MainPage/MainPage';
-import Library from './Components/Library';
-import Favourites from './Components/Favourites';
+import Library from './Components/Library/Library';
+import Favourites from './Components/Favourites/Favourites';
 import Recommended from './Components/Recommended';
 import Navbar from './Components/Navbar/Navbar';
 

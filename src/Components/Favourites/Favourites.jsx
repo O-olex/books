@@ -2,6 +2,8 @@ import React from "react";
 import state from "../../state/state";
 import { observer } from "mobx-react-lite";
 import c from "./Favourites.module.css";
+import save from "../../assets/images/save.png";
+import heart from "../../assets/images/heart.png";
 
 const Favourites = observer(() => {
 
@@ -37,6 +39,7 @@ const Favourites = observer(() => {
                         <td>{book.publisher}</td>
                         <td>{book.rating}</td>
                         <td>{book.pages}</td>
+                        <td><img alt="delete from favourites" className={c.savePng} src={heart} onClick={() => {state.deleteFromFavourites(book.id)}}></img></td>
                     </tr>)}
             </tbody>
         </table>

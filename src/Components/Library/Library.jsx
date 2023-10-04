@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import state from "../../state/state";
 import { observer } from "mobx-react-lite";
 import c from "./Library.module.css";
@@ -31,8 +31,8 @@ const Library = observer( () => {
                     <td>{book.rating}</td>
                     <td>{book.pages}</td>
                     <td>{isFavourite(book.id)
-                        ? <img className={c.savePng} src={heart} onClick={() => {state.deleteFromFavourites(book.id)}}></img>
-                        : <img className={c.savePng} src={save} onClick={() => {state.addToFavourites(book.id)}}></img>}
+                        ? <img alt="delete from favourites" className={c.savePng} src={heart} onClick={() => {state.deleteFromFavourites(book.id)}}></img>
+                        : <img alt="add to favourites" className={c.savePng} src={save} onClick={() => {state.addToFavourites(book.id)}}></img>}
                     </td>
                 </tr>)}
             </tbody>

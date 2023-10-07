@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Recommended = () => {
+
     return (
         <div>
             Recommended books

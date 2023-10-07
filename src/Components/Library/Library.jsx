@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import state from "../../state/state";
 import { observer } from "mobx-react-lite";
 import c from "./Library.module.css";
 import save from "../../assets/images/save.png";
 import heart from "../../assets/images/heart.png";
 
-const Library = observer( () => {
+const Library =  () => {
+
+    
 
     const isFavourite = (id) => {
         return state.favourites.includes(id)
@@ -38,6 +40,6 @@ const Library = observer( () => {
             </tbody>
         </table>
     )
-})
+}
 
-export default Library;
+export default observer(Library);

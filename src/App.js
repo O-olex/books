@@ -5,8 +5,12 @@ import Library from './Components/Library/Library';
 import Favourites from './Components/Favourites/Favourites';
 import Recommended from './Components/Recommended';
 import Navbar from './Components/Navbar/Navbar';
+import state from './state/state';
 
 function App() {
+
+  state.getState()
+
   return (
     <div className={c.App}><Navbar/>
     <div className={c.app_child}>

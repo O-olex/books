@@ -2,10 +2,9 @@ import React from "react";
 import state from "../../state/state";
 import { observer } from "mobx-react-lite";
 import c from "./Favourites.module.css";
-import save from "../../assets/images/save.png";
 import heart from "../../assets/images/heart.png";
 
-const Favourites = observer(() => {
+const Favourites = () => {
 
     let favBooks = [];
 
@@ -13,7 +12,7 @@ const Favourites = observer(() => {
 
         state.favourites.forEach(fav => {
 
-            if (fav == book.id) {
+            if (fav === book.id) {
                 favBooks.push(book)
             }
 
@@ -44,8 +43,8 @@ const Favourites = observer(() => {
             </tbody>
         </table>
     )
-})
+}
 
 
 
-export default Favourites;
+export default observer(Favourites);

@@ -1,4 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx"
+import axios from 'axios';
 
 class State {
     favourites = [1, 3];
@@ -51,11 +52,28 @@ class State {
     }
 
     getState = async () => {
-        const response = await fetch("https://o-olex.github.io/books-storage/storage.json");
-        const data = await response.json()
-        runInAction(() => this.books = data)
-        console.log("fdf")
+        try {
+            const response = await axios.get('http://localhost:5000/api/books');
+            runInAction(() => this.books = response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }
+
+    postState = async () => {
+        const data = this.books
+        try {
+            // Отправка данных на сервер
+            await axios.post('http://localhost:5000/api/books', {
+                data
+            });
+
+        } catch (error) {
+            console.error('Error saving books:', error);
+        }
+    };
+
+
 
     addToFavourites(id) {
         if (!this.favourites.includes(id)) {

@@ -7,7 +7,9 @@ import heart from "../../assets/images/heart.png";
 
 const Library =  () => {
 
-    
+    useEffect(() => {
+        state.getState();
+    },[])
 
     const isFavourite = (id) => {
         return state.favourites.includes(id)
